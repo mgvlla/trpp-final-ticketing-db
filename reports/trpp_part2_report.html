@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>ТРПП Итоговый проект. Часть 2</title>
+  <style>
+    body {
+      font-family: "Times New Roman", serif;
+      font-size: 14pt;
+      line-height: 1.35;
+      margin: 28px;
+      color: #111;
+    }
+    h1, h2 {
+      font-size: 14pt;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+      text-align: center;
+    }
+    p {
+      margin: 0 0 10px 0;
+      text-align: justify;
+    }
+    .meta {
+      text-align: center;
+      margin-bottom: 18px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 14px 0;
+      font-size: 12pt;
+    }
+    th, td {
+      border: 1px solid #000;
+      padding: 6px 8px;
+      vertical-align: top;
+    }
+    th {
+      text-align: center;
+    }
+    .mono {
+      font-family: "Courier New", monospace;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Итоговый проект по дисциплине ТРПП</h1>
+  <p class="meta"><b>Часть 2. Проектирование базы данных</b><br>
+  <b>Выполнили:</b> Магомедова Лолита, Багирян Марьям</p>
+
+  <h2>1. Логическая модель</h2>
+  <p>На этапе логического проектирования были выделены основные сущности и установлены связи между ними. Таблица <span class="mono">event</span> связана с таблицами <span class="mono">event_category</span>, <span class="mono">organizer</span> и <span class="mono">venue</span>, поскольку каждое мероприятие имеет категорию, организатора и площадку. Таблица <span class="mono">ticket</span> хранит билеты, относящиеся к конкретному мероприятию. Заказы пользователей представлены таблицами <span class="mono">customer_order</span> и <span class="mono">order_item</span>, а сведения об оплате вынесены в таблицу <span class="mono">payment</span>.</p>
+
+  <h2>2. Структура таблиц</h2>
+  <table>
+    <tr><th>Таблица</th><th>Ключевые поля</th><th>Назначение</th></tr>
+    <tr><td>event_category</td><td>event_category_id</td><td>Категории мероприятий.</td></tr>
+    <tr><td>organizer</td><td>organizer_id</td><td>Организаторы, их ИНН, почта и телефон.</td></tr>
+    <tr><td>venue</td><td>venue_id</td><td>Площадки проведения, город, адрес, вместимость.</td></tr>
+    <tr><td>app_user</td><td>user_id</td><td>Данные клиентов сервиса.</td></tr>
+    <tr><td>event</td><td>event_id</td><td>Мероприятия, дата проведения, базовая цена.</td></tr>
+    <tr><td>ticket_status</td><td>ticket_status_id</td><td>Статусы билетов.</td></tr>
+    <tr><td>ticket</td><td>ticket_id</td><td>Билеты по местам и секторам.</td></tr>
+    <tr><td>order_status</td><td>order_status_id</td><td>Статусы заказов.</td></tr>
+    <tr><td>customer_order</td><td>order_id</td><td>Заказы клиентов.</td></tr>
+    <tr><td>order_item</td><td>order_item_id</td><td>Состав заказа по билетам.</td></tr>
+    <tr><td>payment_method</td><td>payment_method_id</td><td>Способы оплаты.</td></tr>
+    <tr><td>payment</td><td>payment_id</td><td>Факты оплаты заказов.</td></tr>
+  </table>
+
+  <h2>3. Связи между таблицами</h2>
+  <p>Между таблицами установлены связи типа «один ко многим». Одна категория может соответствовать многим мероприятиям, один организатор может проводить несколько мероприятий, а одна площадка может использоваться для множества событий. Один пользователь может сформировать несколько заказов, но каждый заказ принадлежит только одному пользователю. Один заказ может включать несколько строк заказа, каждая из которых соответствует одному билету. Такая структура позволяет избежать дублирования данных и соответствует нормализованной реляционной модели.</p>
+
+  <h2>4. Нормализация</h2>
+  <p>Схема приведена к третьей нормальной форме. Каждая таблица хранит данные только об одном объекте предметной области, составные данные вынесены в отдельные сущности, а справочные значения представлены отдельными таблицами. Благодаря этому уменьшается избыточность хранения и упрощается поддержка целостности данных.</p>
+
+  <h2>5. DDL-фрагмент</h2>
+  <p>Ниже приведен пример создания одной из ключевых таблиц:</p>
+  <p class="mono">CREATE TABLE event (
+    event_id SERIAL PRIMARY KEY,
+    event_name VARCHAR(150) NOT NULL,
+    event_date TIMESTAMP NOT NULL,
+    base_price NUMERIC(10, 2) NOT NULL CHECK (base_price &gt;= 0),
+    description TEXT,
+    event_category_id INTEGER NOT NULL REFERENCES event_category(event_category_id),
+    organizer_id INTEGER NOT NULL REFERENCES organizer(organizer_id),
+    venue_id INTEGER NOT NULL REFERENCES venue(venue_id)
+);</p>
+
+  <h2>6. Вывод</h2>
+  <p>Во второй части проекта была разработана логическая структура базы данных, определены таблицы, атрибуты и связи между ними. Полученная модель пригодна для последующей реализации в PostgreSQL и выполнения прикладных запросов для анализа продаж билетов и мероприятий.</p>
+</body>
+</html>

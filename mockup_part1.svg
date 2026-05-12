@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850">
+  <rect width="1400" height="850" fill="#f5efe6"/>
+  <rect x="0" y="0" width="1400" height="92" fill="#17324d"/>
+  <text x="48" y="58" font-family="Arial" font-size="34" fill="#ffffff" font-weight="700">TicketFlow Admin</text>
+  <rect x="38" y="130" width="260" height="670" rx="24" fill="#254c6b"/>
+  <text x="68" y="190" font-family="Arial" font-size="28" fill="#ffffff" font-weight="700">Меню</text>
+  <rect x="60" y="220" width="216" height="66" rx="14" fill="#e7d7c1"/>
+  <text x="82" y="263" font-family="Arial" font-size="24" fill="#17324d">Мероприятия</text>
+  <rect x="60" y="305" width="216" height="66" rx="14" fill="#2e6f6d"/>
+  <text x="82" y="348" font-family="Arial" font-size="24" fill="#ffffff">Билеты</text>
+  <rect x="60" y="390" width="216" height="66" rx="14" fill="#2e6f6d"/>
+  <text x="82" y="433" font-family="Arial" font-size="24" fill="#ffffff">Заказы</text>
+  <rect x="60" y="475" width="216" height="66" rx="14" fill="#2e6f6d"/>
+  <text x="82" y="518" font-family="Arial" font-size="24" fill="#ffffff">Платежи</text>
+  <rect x="60" y="560" width="216" height="66" rx="14" fill="#2e6f6d"/>
+  <text x="82" y="603" font-family="Arial" font-size="24" fill="#ffffff">Площадки</text>
+  <rect x="340" y="130" width="1008" height="150" rx="24" fill="#ffffff"/>
+  <text x="382" y="185" font-family="Arial" font-size="30" fill="#17324d" font-weight="700">Панель управления билетным сервисом</text>
+  <text x="382" y="227" font-family="Arial" font-size="22" fill="#5e6a73">Отслеживание мероприятий, билетов, заказов и выручки в одном интерфейсе</text>
+  <rect x="382" y="246" width="240" height="20" rx="10" fill="#c86b3c"/>
+  <rect x="340" y="310" width="310" height="188" rx="22" fill="#ffffff"/>
+  <rect x="689" y="310" width="310" height="188" rx="22" fill="#ffffff"/>
+  <rect x="1038" y="310" width="310" height="188" rx="22" fill="#ffffff"/>
+  <text x="370" y="365" font-family="Arial" font-size="24" fill="#5e6a73">Всего мероприятий</text>
+  <text x="370" y="440" font-family="Arial" font-size="58" fill="#17324d" font-weight="700">3</text>
+  <text x="719" y="365" font-family="Arial" font-size="24" fill="#5e6a73">Продано билетов</text>
+  <text x="719" y="440" font-family="Arial" font-size="58" fill="#17324d" font-weight="700">4</text>
+  <text x="1068" y="365" font-family="Arial" font-size="24" fill="#5e6a73">Выручка</text>
+  <text x="1068" y="440" font-family="Arial" font-size="58" fill="#17324d" font-weight="700">8000 ₽</text>
+  <rect x="340" y="530" width="658" height="238" rx="22" fill="#ffffff"/>
+  <text x="374" y="580" font-family="Arial" font-size="28" fill="#17324d" font-weight="700">Ближайшие мероприятия</text>
+  <line x1="374" y1="612" x2="962" y2="612" stroke="#d5c4ae" stroke-width="2"/>
+  <text x="374" y="655" font-family="Arial" font-size="22" fill="#17324d">Весенний джазовый вечер</text>
+  <text x="790" y="655" font-family="Arial" font-size="22" fill="#5e6a73">15.06.2026</text>
+  <text x="374" y="700" font-family="Arial" font-size="22" fill="#17324d">Современная драма</text>
+  <text x="790" y="700" font-family="Arial" font-size="22" fill="#5e6a73">20.06.2026</text>
+  <text x="374" y="745" font-family="Arial" font-size="22" fill="#17324d">Лекция по управлению проектами</text>
+  <text x="790" y="745" font-family="Arial" font-size="22" fill="#5e6a73">25.06.2026</text>
+  <rect x="1038" y="530" width="310" height="238" rx="22" fill="#17324d"/>
+  <text x="1070" y="582" font-family="Arial" font-size="28" fill="#ffffff" font-weight="700">Быстрые действия</text>
+  <rect x="1070" y="620" width="246" height="42" rx="12" fill="#e7d7c1"/>
+  <text x="1100" y="648" font-family="Arial" font-size="21" fill="#17324d">Добавить событие</text>
+  <rect x="1070" y="678" width="246" height="42" rx="12" fill="#e7d7c1"/>
+  <text x="1100" y="706" font-family="Arial" font-size="21" fill="#17324d">Посмотреть заказы</text>
+</svg>
